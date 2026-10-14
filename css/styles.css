@@ -1,0 +1,93 @@
+/* This creates fluid images throughout the site. */
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    /* when an img has width and height attributes in the html the browser will use that exact height. Without height: auto, the image shrinks in width, but keeps the full height. This allows the height to adjust along with the width. */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Starting with the generic CSS starting mobile first, but this also applies to all screen sizes*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1F3d2b;
+}
+
+.inner-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* 1. Responsive background image */
+
+header {
+    min-height: 25rem;
+    /* The one place to use height is with a background image to see more areas of the image. */
+    padding: 3rem 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background-color: #e9eaee;
+    background-image: url(../img/small-bg.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    p {
+        font-size: 1.125rem;
+        /* This targets the p within the header section in the markup */
+    }
+}
+
+/* This media query is to adjust the column layout at 700px */
+@media screen and (min-width: 700px) {
+    .featured {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .featured div,
+    picture {
+        flex: 1;
+    }
+}
+
+/* medium screens: swap in the 1200px wide image. */
+@media screen and (min-width: 1100px) {
+    header {
+        min-height: 37.5rem;
+        background-image: url(../img/med-bg.jpg);
+    }
+}
+
+/* large screens: swap in 1800px wide image. */
+@media screen and (min-width: 1700px) {
+    header {
+        min-height: 46.875rem;
+        background-image: url(../img/lg-bg.jpg);
+    }
+}
+
+
